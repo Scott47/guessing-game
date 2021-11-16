@@ -6,18 +6,23 @@ namespace guessing_game
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Guess the secret number");
-            string input = Console.ReadLine();
-            int result = Int32.Parse(input);
-            int secret_number = 42;
-            if (result == secret_number)
+            for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine("Success, you guessed the secret number!");
-            }
-            else
-            {
-                Console.WriteLine("Failure");
+
+                Console.WriteLine("Guess the secret number");
+                string input = Console.ReadLine();
+                int result = Int32.Parse(input);
+                int secret_number = 42;
+                if (result == secret_number)
+                {
+                    Console.WriteLine("Success, you guessed the secret number!");
+                }
+                else
+                {
+                    Console.WriteLine("Failure");
+                }
             }
         }
     }
 }
+///Move logic for guess into a function, so that it can run 4 times unless the user guess correctly. 
