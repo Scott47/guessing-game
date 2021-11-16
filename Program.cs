@@ -9,13 +9,15 @@ namespace guessing_game
             for (int i = 0; i < 4; i++)
             {
 
-                Console.WriteLine("Guess the secret number");
+                Console.Write("Guess the secret number");
                 string input = Console.ReadLine();
+                Console.WriteLine($"your guess is: {input}");
                 int result = Int32.Parse(input);
                 int secret_number = 42;
                 if (result == secret_number)
                 {
                     Console.WriteLine("Success, you guessed the secret number!");
+                    break;
                 }
                 else
                 {
