@@ -6,20 +6,27 @@ namespace guessing_game
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 4; i++)
+            int secret_number = new Random().Next(0, 100);
+            for (int i = 4; i > 0; i--)
             {
-
-                Console.WriteLine("Guess the secret number");
+                Console.Write("Guess the secret number: ");
                 string input = Console.ReadLine();
+                Console.WriteLine($"Your guess is {input}. ");
+                Console.WriteLine($" You have {i - 1} guesses left");
                 int result = Int32.Parse(input);
-                int secret_number = 42;
                 if (result == secret_number)
                 {
                     Console.WriteLine("Success, you guessed the secret number!");
+                    break;
+                }
+                else if (secret_number > result)
+                {
+                    Console.WriteLine("Your guess is too high!");
                 }
                 else
                 {
-                    Console.WriteLine("Failure");
+
+                    Console.WriteLine($"Your guess is too low! ");
                 }
             }
         }
